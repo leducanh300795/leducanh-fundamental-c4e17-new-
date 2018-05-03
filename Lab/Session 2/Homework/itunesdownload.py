@@ -23,6 +23,14 @@ li_list = ul.find_all("li")
 li = li_list[0]
 song_list = []
 
+options = {
+    'default_search': 'ytsearch',
+    'max_downloads': 200,
+    'format': 'bestaudio/audio',
+}
+
+dl = YoutubeDL(options)
+
 for li in li_list:
     a_song= li.h3.a
     a_artist= li.h4.a
@@ -36,21 +44,10 @@ for li in li_list:
         "Artists": a_nameartist
     }
     song_list.append(item)
-# title = a['title']
-# print(tittle)
-#3.
-# print(item_list)
+    song =str(item['Names'])
+    dl.download([song])
+
 pyexcel.save_as(records=song_list, dest_file_name="itunes.xlsx")
 
-options = {
-    'default_search': 'ytsearch', # tell downloader to search instead of directly downloading
-    'max_downloads': 1 # Tell downloader to download only the second entry (video)
-    'format': 'bestaudio/audio'
-}
-dl = YoutubeDL(options)
-for li in li_list:
-    song = item['Names']
-    dl.download([song])
 # dl = YoutubeDL(options)
 #
-# dl.download([song.item['Names']])
