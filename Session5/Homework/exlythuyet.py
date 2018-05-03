@@ -1,7 +1,7 @@
 import operator
 n=input("Input: ").lower()
 count = {}
-for letter in n:
+# for letter in n:
     if letter == " ":
         continue
     count[letter]=count.get(letter,0) + 1
