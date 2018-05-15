@@ -15,9 +15,14 @@
       <img src="../static/image/female.jpg" alt="">
       {% endif %}
       <p>Name: {{customer.name}} </p>
-      <p>Gender: {{customer.gender}} </p>
+      {% if customer.gender == 1 %}
+      <p>Gender: Male </p>
+
+      {% else %}
+      <p>Gender: Female </p>
+      {% endif %}
       <p>Email: {{customer.email}} </p>
-      <p>Phone: {{customer.phone}} </p>
+      <p>Phone: {{customer.phone_number}} </p>
       <p>Job: {{customer.job}} </p>
       <p>Company: {{customer.company}} </p>
       <p>contacted: {{customer.contacted}} </p>

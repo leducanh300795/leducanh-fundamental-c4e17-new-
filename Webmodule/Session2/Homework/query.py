@@ -1,12 +1,12 @@
-from module.service import Service
+from module.customer import Customers
 import mlab
 
 
 mlab.connect()
-all_service = Service.objects(gender=1)
+all_service = Customers.objects(gender=1)
 
 
-for index, service in enumerate(all_service):
-    print(service['name'])
+for index, customer in enumerate(all_service):
+    print(customer['name'])
     if index == 9:
         break

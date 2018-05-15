@@ -37,9 +37,7 @@ mlab.connect()
 #
 # service.save()
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+
 
 @app.route('/')
 def search():
@@ -50,7 +48,7 @@ def search():
 
 @app.route('/customer')
 def search_customer():
-    all_customer = Customers.objects[:10](contacted=False, gender =1)
+    all_customer = Customers.objects[0:10](contacted=False, gender =1)
     return render_template('search.html', all_customer = all_customer)
 # @app.route('/searchage/<age>')
 # def search(age):
