@@ -5,10 +5,10 @@
     <title>Mùa Đông Không Lạnh</title>
   </head>
   <body>
-    <h1> Main Page </h1>
-    <a href="{{ url_for ('search_customer')}}" > Bạn là Nữ, muốn tìm 10 chàng trai đầu tiên  ? </a>
+    <h1> Search page </h1>
     {% for customer in all_customer %}
     <div>
+      <!-- <a href="{{ url_for ('search', g=1, contacted=False )}}" > Bạn là Nữ  ? </a> -->
       {% if customer.gender == 1 %}
       <img src="../static/image/male.jpg" alt="">
 
